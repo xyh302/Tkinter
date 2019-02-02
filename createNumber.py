@@ -21,6 +21,19 @@ def callCheckbutton1():
 
 def callCheckbutton2():
     alist2 = []
+    for i in alist:
+        for j in i:
+            if i.count(j) > 2:
+                if i not in alist2:
+                    alist2.append(i)
+                    continue
+    for i in alist2:
+        alist.remove(i)
+    print(alist)
+
+
+def callCheckbutton3():
+    alist2 = []
     for eachNumber in alist:
         for i,ele in enumerate(eachNumber):
             if i > 0 and ele == eachNumber[i-1]:
@@ -121,7 +134,7 @@ Label(root, text="第一项默认必选，第2-9项不填默认不选").grid()
 Label(root, text="").grid()
 Checkbutton(root, text="1.A(0...9)/B(0...9)C(0...9)D(0...9);(四个数都是0-9中选择;)", command=callCheckbutton1).grid()
 Checkbutton(root, text="2.A=B不等于C、D;(只允许两个数相同)", command=callCheckbutton2).grid()
-Checkbutton(root, text="3.A不等于B不等于C不等于D(四个数不同)", command=callCheckbutton2).grid()
+Checkbutton(root, text="3.A不等于B不等于C不等于D(四个数不同)", command=callCheckbutton3).grid()
 
 Label(root, text="4.A\B\C\D排除掉一个数,请输入你要排除的数字：").grid()
 comb = ttk.Combobox(root,values=[0,1,2,3,4,5,6,7,8,9])
