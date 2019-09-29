@@ -243,7 +243,8 @@ def clear():
 
 def choose():
     root.destroy()
-    os.system("python newCreateNumber.py")
+    # os.system("python newCreateNumber.py")
+    os.system("newCreateNumber.exe")
 
 
 def run1():
